@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <style>
+        ul li{
+            border: 1px solid red;
+            border-radius: 6px;
+            padding: 6px;
+            margin: 0.5rem;
+            list-style: none;
+        }
+        input{
+            padding: 8px;
+            border-radius: 6px;
+        }
+        button{
+            margin: 0.5rem;
+            background-color: lightgrey;
+            border: none;
+            padding: 6px;
+            border-radius: 6px;
+        }
+        button:hover{
+            background-color: greenyellow;
+        }
+      
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="myinput">
+        <button id="btn" onclick="addtodo()">Add</button>
+        <!-- <button id="remove" onclick="remove()">remove</button>
+          -->
+         <ul id="add">
+           
+         </ul>
+         
+    </div>
+    
+    <script>
+        
+     function addtodo() {
+        const getul = document.getElementById("add");
+        const input = document.getElementById("myinput").value;
+        const listitem = document.createElement("li");
+        
+     if(input != "")
+     {
+        
+        listitem.innerHTML = `
+       <div>
+        <label>
+            <span>${input}</span>
+        </label>  
+         <button id="btn" onclick="remove(this)">Remove</button>
+        </div>
+         `
+        
+
+        getul.append(listitem);
+     }
+        document.getElementById("myinput").value = ""; 
+     }
+     function remove(e)
+     {
+       console.log(e.closest("li").remove())
+       const list = document.querySelector("li")
+    //    getlist.remove()
+     }
+    </script>
+</body>
+</html>
