@@ -4,74 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
-
-    <style>
-        ul li{
-            border: 1px solid red;
-            border-radius: 6px;
-            padding: 6px;
-            margin: 0.5rem;
-            list-style: none;
-        }
-        input{
-            padding: 8px;
-            border-radius: 6px;
-        }
-        button{
-            margin: 0.5rem;
-            background-color: lightgrey;
-            border: none;
-            padding: 6px;
-            border-radius: 6px;
-        }
-        button:hover{
-            background-color: greenyellow;
-        }
-      
-    </style>
 </head>
 <body>
-    <div>
-        <input type="text" id="myinput">
-        <button id="btn" onclick="addtodo()">Add</button>
-        <!-- <button id="remove" onclick="remove()">remove</button>
-          -->
-         <ul id="add">
-           
-         </ul>
-         
-    </div>
-    
-    <script>
+    <div class="main">
+        <h1>Todo App</h1>
+        <input type="text" id="input">
+        <button onclick="addTodo()">Add</button>
+        <button onclick="remove()">Remove</button>
         
-     function addtodo() {
-        const getul = document.getElementById("add");
-        const input = document.getElementById("myinput").value;
-        const listitem = document.createElement("li");
-        
-     if(input != "")
-     {
-        
-        listitem.innerHTML = `
-       <div>
-        <label>
-            <span>${input}</span>
-        </label>  
-         <button id="btn" onclick="remove(this)">Remove</button>
-        </div>
-         `
-        
+        <ul id="list">
 
-        getul.append(listitem);
-     }
-        document.getElementById("myinput").value = ""; 
-     }
-     function remove(e)
-     {
-       console.log(e.closest("li").remove())
-       const list = document.querySelector("li")
-    //    getlist.remove()
-     }
+        </ul>
+    </div>
+
+    <script>
+        const input = document.getElementById('input')
+        const list = document.getElementById('list')
+
+     
+        function addTodo()
+        {
+            const listItem = document.createElement('li')
+            listItem.textContent = input.value
+            if(input.value)
+        {
+            list.appendChild(listItem)
+        }
+        else{
+            alert(`Please Enter the Task you want to add`)
+        }
+       
+            input.value = ''
+            
+        }
+        function remove()
+        {
+           const last  = list.lastElementChild
+           list.removeChild(last)
+           
+        }
+
     </script>
 </body>
 </html>
