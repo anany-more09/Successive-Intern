@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 250px;
+            margin: 1rem;
+            padding: 1rem;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box" id="dibba">
+            <p id="para"></p>
+        </div>
+        <button onclick="add()"> + </button>
+        <input type="text" id="input">
+        <button onclick="remove()"> - </button>
+    </div>
+  
+    
+    <script>
+       const input = document.getElementById('input')
+       const para = document.getElementById('para')
+       const dibba = document.getElementsById('dibba')
+       function add()
+       {
+         const inputValue = input.value
+         para.textContent = inputValue
+         dibba.style.border = "1px solide red"
+         
+
+       }
+    </script>
+</body>
+</html>
