@@ -3,7 +3,10 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "./pages/home"
 import Dashboard from "./pages/dashboard"
 import About from "./pages/about"
-import Constacts from "./pages/constacts"
+import Header from "./components/Headers/Header";
+import SignUp from "./components/Headers/SignUp";
+import Login from "./components/Headers/Login";
+
 
 
 
@@ -14,14 +17,14 @@ function App() {
 
     <>
     <Header/>
-    <BrowserRouter>
        <Routes>
           <Route path= "/" element={<Home />} />
           <Route path="/about" element={<About/>} />
-          <Route path="/Constacts" element={<Constacts/>}/>
+          <Route path="/login"  element={<Login />}/>
           <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path ="/signUp" element={<SignUp />}/>
        </Routes>
-    </BrowserRouter>
+       <Login/>
     
     </>
   );
