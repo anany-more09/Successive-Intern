@@ -1,16 +1,13 @@
 import React from 'react'
 
-const About = () => {
+function Profile() {
   return (
-    
-
-<> 
-     <div>About</div>
+    <>
+     <div>Profile</div>
      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sed veniam, at culpa quod cupiditate minus eos repudiandae dolore saepe!</p>
     </>
 
-  
   )
 }
 
-export default About
+export default Profile

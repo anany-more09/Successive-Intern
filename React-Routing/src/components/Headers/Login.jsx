@@ -2,18 +2,20 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import Button from '../Smaller/Button';
-import Dashboard from '../../pages/dashboard';
+// import Dashboard from '../../pages/dashboard';
 
 function Login() {
-       const [check, setCheck] = useState(false);
+       const [check, setCheck] = useState(true);
        const navigate = useNavigate();
 
-      function handleLogin()
+      function handleLogIn()
       {
+        console.log(check, "Print Hua Print Hua")
     
         if(!check)
         {
           navigate('/signUp')
+          
         }
         else
         {
@@ -57,7 +59,7 @@ function Login() {
                     </svg>
                   </div>
                 </div>
-      
+                  
                 <div>
                   <label className="text-slate-800 text-sm font-medium mb-2 block">Password</label>
                   <div className="relative flex items-center">
@@ -101,7 +103,7 @@ function Login() {
                 </div>
       
                 <div className="!mt-12">
-                  <Button label="LogIn" onclick={handleLogin} />
+                  <Button label="LogIn" onClick={handleLogIn} />
                   <p className="text-sm !mt-6 text-center text-slate-500">
                     Don't have an account
                     <a
@@ -120,4 +122,4 @@ function Login() {
       
 }
 
-export default Login
+export default Login 

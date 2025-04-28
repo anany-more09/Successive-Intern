@@ -1,7 +1,20 @@
-const value = {
-    food:5,
-    travel:0,
-    others:0
-}
+useEffect(() => {
+    
+    
+}, []); // this will run only one time when the component mounts
 
-console.log(value.food)
+useEffect(() => {
+    
+    
+},); // runs every time when component rerender
+
+
+useEffect(() => {
+    
+    
+}, [Dependencies]); // runs only on Dependencies 
+
+
+// in this three type we can useEffect
+
+

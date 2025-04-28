@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import { useNavigate, NavLink} from 'react-router-dom'
 import Button from '../Smaller/Button'
 import Login from './Login';
 
@@ -10,37 +10,34 @@ function Header() {
 
   function handleLogin()
   {
+    console.log(check,"ceck")
     if(!check)
     {
       navigate("/signUp")
     }
     else
     {
-      <Login />
+      navigate('/login')
       setCheck(false)
+      console.log(check, "dlirukghlboukdjsbrg")
     }
    
   }
-  function handleSignup()
-  {
-
-  }
-
+  
   return (
     <>
     <div className='flex justify-between m-3 p-4'>
     <div className='m-3 p-4'>
-    <Link className='text-red mx-4' to="/">Home</Link>
-    <Link className='text-red mx-4' to="/about">about</Link>
-    <Link className='text-red mx-4' to="/dashboard">dashboard</Link>
+    <NavLink className= {({isActive}) => isActive ? 'text-red-800 m-2 p-4' : 'text-blue-500 m-2 p-4'} to="/">Home</NavLink>
+    <NavLink className= {({isActive}) => isActive ? 'text-red-800 m-2 p-4' : 'text-blue-500 m-2 p-4'} to="/about">about</NavLink>
+    <NavLink className= {({isActive}) => isActive ? 'text-red-800 m-2 p-4' : 'text-blue-500 m-2 p-4'} to="/dashboard">dashboard</NavLink>
   </div>
   <div className=' p-3 gap-2'>
     <Button label="LogIn" onclick={handleLogin}/>
-    <Button label="SignUp" onclick={handleSignup}/>
+     
   </div>
     </div>
     </>
-   
   )
 }
 
